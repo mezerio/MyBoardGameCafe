@@ -1,0 +1,57 @@
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  height: 40px;
+  justify-content: space-between;
+  z-index: 1;
+  animation-timing-function: ease-in;
+  transition: all 0.5s;
+}
+
+.nav__black {
+  background-color: white;
+}
+
+.nav__logo {
+  position: fixed;
+  left: 50px;
+  height: 40px;
+  object-fit: contain;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.nav__avatar {
+  position: fixed;
+  right: 40px;
+  width: 40px;
+  cursor: pointer;
+  object-fit: contain;
+}
+
+.navpages {
+  display: flex;
+  color: white;
+  position: fixed;
+  left: 240px;
+  height: 40px;
+  width: 200px;
+  align-items: center;
+  font-weight: bolder;
+}
+
+.navpage {
+  margin: 10px;
+}
+
+.navpage__black {
+  color: black;
+}
+
+.navpage:hover {
+  color: red;
+  cursor: pointer;
+}

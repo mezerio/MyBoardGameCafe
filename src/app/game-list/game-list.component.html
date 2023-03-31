@@ -1,47 +1,72 @@
 <div class="row">
-  <h2>Most Popular</h2>
+  <h4>Most Popular</h4>
   <div class="row__posters" #posters>
-    <img
-      *ngFor="let game of boardGames"
-      src="{{ game.image_url }}"
-      alt="Image description"
-      class="row__posterLarge"
-    />
+    <ng-container *ngFor="let game of boardGames">
+      <img
+        *ngIf="
+          game.image_url !==
+          'https://s3-us-west-1.amazonaws.com/5cc.images/games/empty+box.jpg'
+        "
+        src="{{ game.image_url }}"
+        alt="Image description"
+        class="row__posterLarge"
+      />
+    </ng-container>
   </div>
-  <h2>2 Players</h2>
+  <h4>2 Players</h4>
   <div class="row__posters" #posters>
-    <img
-      *ngFor="let game of board2Games"
-      src="{{ game.image_url }}"
-      alt="{{ game.name }}"
-      class="row__poster"
-    />
+    <ng-container *ngFor="let game of board2Games">
+      <img
+        *ngIf="
+          game.image_url !==
+          'https://s3-us-west-1.amazonaws.com/5cc.images/games/empty+box.jpg'
+        "
+        src="{{ game.image_url }}"
+        alt="{{ game.name }}"
+        class="row__poster"
+      />
+    </ng-container>
   </div>
-  <h2>3-4 Players</h2>
+  <h4>3-4 Players</h4>
   <div class="row__posters" #posters>
-    <img
-      *ngFor="let game of board34Games"
-      src="{{ game.image_url }}"
-      alt="{{ game.name }}"
-      class="row__poster"
-    />
+    <ng-container *ngFor="let game of board34Games">
+      <img
+        *ngIf="
+          game.image_url !==
+          'https://s3-us-west-1.amazonaws.com/5cc.images/games/empty+box.jpg'
+        "
+        src="{{ game.image_url }}"
+        alt="{{ game.name }}"
+        class="row__poster"
+      />
+    </ng-container>
   </div>
-  <h2>5-6 Players</h2>
+  <h4>5-6 Players</h4>
   <div class="row__posters" #posters>
-    <img
-      *ngFor="let game of board56Games"
-      src="{{ game.image_url }}"
-      alt="{{ game.name }}"
-      class="row__poster"
-    />
+    <ng-container *ngFor="let game of board56Games">
+      <img
+        *ngIf="
+          game.image_url !==
+          'https://s3-us-west-1.amazonaws.com/5cc.images/games/empty+box.jpg'
+        "
+        src="{{ game.image_url }}"
+        alt="{{ game.name }}"
+        class="row__poster"
+      />
+    </ng-container>
   </div>
-  <h2>6+ Players</h2>
+  <h4>6+ Players</h4>
   <div class="row__posters" #posters>
-    <img
-      *ngFor="let game of board6pGames"
-      src="{{ game.image_url }}"
-      alt="{{ game.name }}"
-      class="row__poster"
-    />
+    <ng-container *ngFor="let game of board6pGames">
+      <img
+        *ngIf="
+          game.image_url !==
+          'https://s3-us-west-1.amazonaws.com/5cc.images/games/empty+box.jpg'
+        "
+        src="{{ game.image_url }}"
+        alt="{{ game.name }}"
+        class="row__poster"
+      />
+    </ng-container>
   </div>
 </div>

@@ -9,9 +9,11 @@ import { HttpClientModule } from "@angular/common/http";
 import { AppComponent } from "./app.component";
 import { BannerComponent } from "./banner/banner.component";
 import { GameListComponent } from "./game-list/game-list.component";
+import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent, BannerComponent, GameListComponent],
+  declarations: [AppComponent, BannerComponent, GameListComponent, NavbarComponent, FooterComponent],
   imports: [BrowserModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
