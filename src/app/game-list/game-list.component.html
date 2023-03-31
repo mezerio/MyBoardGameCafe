@@ -1,0 +1,47 @@
+<div class="row">
+  <h2>Most Popular</h2>
+  <div class="row__posters" #posters>
+    <img
+      *ngFor="let game of boardGames"
+      src="{{ game.image_url }}"
+      alt="Image description"
+      class="row__posterLarge"
+    />
+  </div>
+  <h2>2 Players</h2>
+  <div class="row__posters" #posters>
+    <img
+      *ngFor="let game of board2Games"
+      src="{{ game.image_url }}"
+      alt="{{ game.name }}"
+      class="row__poster"
+    />
+  </div>
+  <h2>3-4 Players</h2>
+  <div class="row__posters" #posters>
+    <img
+      *ngFor="let game of board34Games"
+      src="{{ game.image_url }}"
+      alt="{{ game.name }}"
+      class="row__poster"
+    />
+  </div>
+  <h2>5-6 Players</h2>
+  <div class="row__posters" #posters>
+    <img
+      *ngFor="let game of board56Games"
+      src="{{ game.image_url }}"
+      alt="{{ game.name }}"
+      class="row__poster"
+    />
+  </div>
+  <h2>6+ Players</h2>
+  <div class="row__posters" #posters>
+    <img
+      *ngFor="let game of board6pGames"
+      src="{{ game.image_url }}"
+      alt="{{ game.name }}"
+      class="row__poster"
+    />
+  </div>
+</div>
