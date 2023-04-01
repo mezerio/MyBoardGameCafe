@@ -130,3 +130,25 @@ h4 {
   border-bottom-style: solid;
   width: 20%;
 }
+
+h2 {
+  margin: 0;
+}
+
+.popUpDesc {
+  background-color: rgba(255, 0, 0, 0.637);
+  padding: 10px;
+  border-radius: 5px;
+  color: black;
+  margin-right: 50px;
+}
+.badgesContainer {
+  display: flex;
+}
+.badge {
+  background-color: black;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 3px;
+  color: white;
+}

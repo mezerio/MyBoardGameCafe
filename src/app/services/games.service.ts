@@ -16,22 +16,22 @@ export class BoardGameService {
   }
   get2BoardGames(): Observable<any> {
     return this.http.get(
-      `${this.apiUrl}/search?min_players=2&max_players=2&client_id=${this.apiKey}`
+      `${this.apiUrl}/search?max_players=2&client_id=${this.apiKey}`
     );
   }
   get34BoardGames(): Observable<any> {
     return this.http.get(
-      `${this.apiUrl}/search?min_players=3&max_players=4&client_id=${this.apiKey}`
+      `${this.apiUrl}/search?max_players=4&client_id=${this.apiKey}`
     );
   }
   get56BoardGames(): Observable<any> {
     return this.http.get(
-      `${this.apiUrl}/search?min_players=5&max_players=6&client_id=${this.apiKey}`
+      `${this.apiUrl}/search?max_players=6&client_id=${this.apiKey}`
     );
   }
-  get6pBoardGames(): Observable<any> {
+  get7pBoardGames(): Observable<any> {
     return this.http.get(
-      `${this.apiUrl}/search?min_players=6&client_id=${this.apiKey}`
+      `${this.apiUrl}/search?min_players=7&client_id=${this.apiKey}`
     );
   }
 }

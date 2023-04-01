@@ -11,10 +11,63 @@
     <h1 class="banner__title">Scythe</h1>
 
     <div class="banner__buttons">
-      <button class="banner__button">Play</button>
-      <button class="banner__button">More Info</button>
+      <a target="_blank" href="https://www.amazon.com/s?k=Scythe+board+game">
+        <button class="banner__button">Purchase</button>
+      </a>
+      <button
+        class="banner__button"
+        *ngIf="showInfo == false"
+        (click)="handleShowInfo(true)"
+      >
+        More Info
+      </button>
+      <button
+        class="banner__button"
+        *ngIf="showInfo == true"
+        (click)="handleShowInfo(false)"
+      >
+        Less Info
+      </button>
+      <img
+        class="starIcon"
+        [src]="
+          isStarred
+            ? '../../assets/starredIcon.png'
+            : '../../assets/starIcon.png'
+        "
+        (click)="starGame()"
+      />
     </div>
-    <h1 class="banner__description">
+    <div class="popUpDesc" *ngIf="showInfo == true">
+      <div class="badgesContainer">
+        <p class="badge">2016</p>
+        <p class="badge">Ages:14+</p>
+        <p class="badge">Playtime: 90-120mins</p>
+        <p class="badge">Players:1-5</p>
+      </div>
+      <h1 class="popUpDescription">
+        Scythe gives players almost complete control over their fate. Other than
+        each player's individual hidden objective card, the only elements of
+        luck or variability are "Encounter" cards that players will draw as they
+        interact with the citizens of newly explored lands. Each encounter card
+        provides the player with several options, allowing them to mitigate the
+        luck of the draw through their selection. Combat is also driven by
+        choices, not luck or randomness. Scythe uses a streamlined
+        action-selection mechanism (no rounds or phases) to keep gameplay moving
+        at a brisk pace and reduce downtime between turns. While there is plenty
+        of direct conflict for players who seek it, there is no player
+        elimination. Every part of Scythe has an aspect of engine-building to
+        it. Players can upgrade actions to become more efficient, build
+        structures that improve their position on the map, enlist new recruits
+        to enhance character abilities, activate mechs to deter opponents from
+        invading, and expand their borders to reap greater types and quantities
+        of resources. These engine-building aspects create a sense of momentum
+        and progress throughout the game. The order in which players improve
+        their engine adds to the unique feel of each game, even when playing one
+        faction multiple times.
+      </h1>
+    </div>
+    <h1 class="banner__description" *ngIf="showInfo == false">
       <em>Scythe</em> gives players almost complete control over their fate.
       Other than each player's individual hidden objective card, the only
       elements of luck or variability are &quot;Encounter&quot; cards that

@@ -17,13 +17,24 @@
 }
 
 .banner__description {
-  width: 45rem;
   line-height: 1.3;
   padding-top: 1rem;
   font-size: 0.8rem;
-  max-width: 320px;
+  max-width: 500px;
   height: 80px;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.popUpDescription {
+  color: white;
+  line-height: 1.3;
+  padding-top: 1rem;
+  font-size: 0.8rem;
+  max-width: 500px;
+  height: 80px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  height: 80px; /* set a fixed height */
+  overflow: auto;
 }
 
 .banner__button {
@@ -61,4 +72,29 @@
 
 * {
   transition: all 2s;
+}
+.popUpDesc {
+  padding: 5px;
+  border-radius: 5px;
+  color: black;
+  margin-right: 50px;
+}
+.badgesContainer {
+  display: flex;
+}
+.badge {
+  font-size: 12px;
+  font-weight: bold;
+  background-color: white;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 3px;
+  color: black;
+}
+
+.starIcon {
+  height: 31.5px;
+  position: absolute;
+  opacity: 70%;
+  cursor: pointer;
 }

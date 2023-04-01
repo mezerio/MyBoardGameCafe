@@ -12,19 +12,35 @@
           alt="Image description"
           class="row__posterLarge"
         />
-        <div class="overlayContainerLarge">
-          <p class="overlayTextLarge">{{ game.name }}</p>
-          <img
-            class="basketIconLarge"
-            src="../../assets/basketIcon.png"
-            alt="IconLarge"
-          />
+        <div class="overlayContainerLarge" (click)="hidePopUp()">
+          <p
+            class="overlayTextLarge"
+            (click)="onLargeGameClicked(game); onEvent($event)"
+          >
+            {{ game.name }}
+          </p>
+          <a
+            target="_blank"
+            href="https://www.amazon.com/s?k={{ game.name }}+board+game"
+          >
+            <img
+              class="basketIconLarge"
+              src="../../assets/basketIcon.png"
+              alt="IconLarge"
+            />
+          </a>
           <img
             class="starIconLarge"
-            src="../../assets/starIcon.png"
+            [src]="
+              isStarred(game)
+                ? '../../assets/starredIcon.png'
+                : '../../assets/starIcon.png'
+            "
             alt="IconLarge"
+            (click)="starGame(game); onEvent($event)"
           />
           <img
+            (click)="onLargeGameClicked(game); onEvent($event)"
             class="infoIconLarge"
             src="../../assets/infoIcon.png"
             alt="IconLarge"
@@ -32,6 +48,32 @@
         </div>
       </div>
     </ng-container>
+  </div>
+  <div class="popUpDesc" *ngIf="showGameDetails == '0'">
+    <h2>{{ clickedGame.name }}</h2>
+    <div class="badgesContainer">
+      <p class="badge">{{ clickedGame.year_published }}</p>
+      <p class="badge">Ages:{{ clickedGame.min_age }}+</p>
+      <p class="badge">
+        Playtime: {{ clickedGame.min_playtime }}-{{
+          clickedGame.max_playtime
+        }}mins
+      </p>
+      <p
+        class="badge"
+        *ngIf="clickedGame.min_players != clickedGame.max_players"
+      >
+        Players:{{ clickedGame.min_players }}-{{ clickedGame.max_players }}
+      </p>
+      <p
+        class="badge"
+        *ngIf="clickedGame.min_players == clickedGame.max_players"
+      >
+        Players:{{ clickedGame.min_players }}
+      </p>
+    </div>
+    <h3 *ngIf="clickedGame.description_preview !== ''">Description</h3>
+    <p>{{ clickedGame.description_preview }}</p>
   </div>
   <h4>2 PLAYERS</h4>
   <div class="row__posters" #posters>
@@ -46,19 +88,34 @@
           alt="{{ game.name }}"
           class="row__poster"
         />
-        <div class="overlayContainer">
-          <p class="overlayText">{{ game.name }}</p>
-          <img
-            class="basketIcon"
-            src="../../assets/basketIcon.png"
-            alt="basketIcon"
-          />
+        <div class="overlayContainer" (click)="hidePopUp()">
+          <p class="overlayText" (click)="onGameClicked(game); onEvent($event)">
+            {{ game.name }}
+          </p>
+          <a
+            target="_blank"
+            href="https://www.amazon.com/s?k={{ game.name }}+board+game"
+          >
+            <img
+              class="basketIcon"
+              src="../../assets/basketIcon.png"
+              alt="basketIcon"
+            />
+          </a>
+
           <img
             class="starIcon"
-            src="../../assets/starIcon.png"
+            [src]="
+              isStarred(game)
+                ? '../../assets/starredIcon.png'
+                : '../../assets/starIcon.png'
+            "
+            alt="IconLarge"
+            (click)="starGame(game); onEvent($event)"
             alt="basketIcon"
           />
           <img
+            (click)="onGameClicked(game); onEvent($event)"
             class="infoIcon"
             src="../../assets/infoIcon.png"
             alt="basketIcon"
@@ -66,6 +123,32 @@
         </div>
       </div>
     </ng-container>
+  </div>
+  <div class="popUpDesc" *ngIf="showGameDetails == '2'">
+    <h2>{{ clickedGame.name }}</h2>
+    <div class="badgesContainer">
+      <p class="badge">{{ clickedGame.year_published }}</p>
+      <p class="badge">Ages:{{ clickedGame.min_age }}+</p>
+      <p class="badge">
+        Playtime: {{ clickedGame.min_playtime }}-{{
+          clickedGame.max_playtime
+        }}mins
+      </p>
+      <p
+        class="badge"
+        *ngIf="clickedGame.min_players != clickedGame.max_players"
+      >
+        Players:{{ clickedGame.min_players }}-{{ clickedGame.max_players }}
+      </p>
+      <p
+        class="badge"
+        *ngIf="clickedGame.min_players == clickedGame.max_players"
+      >
+        Players:{{ clickedGame.min_players }}
+      </p>
+    </div>
+    <h3 *ngIf="clickedGame.description_preview !== ''">Description</h3>
+    <p>{{ clickedGame.description_preview }}</p>
   </div>
   <h4>3-4 PLAYERS</h4>
   <div class="row__posters" #posters>
@@ -80,19 +163,33 @@
           alt="{{ game.name }}"
           class="row__poster"
         />
-        <div class="overlayContainer">
-          <p class="overlayText">{{ game.name }}</p>
-          <img
-            class="basketIcon"
-            src="../../assets/basketIcon.png"
-            alt="basketIcon"
-          />
+        <div class="overlayContainer" (click)="hidePopUp()">
+          <p class="overlayText" (click)="onGameClicked(game); onEvent($event)">
+            {{ game.name }}
+          </p>
+          <a
+            target="_blank"
+            href="https://www.amazon.com/s?k={{ game.name }}+board+game"
+          >
+            <img
+              class="basketIcon"
+              src="../../assets/basketIcon.png"
+              alt="basketIcon"
+            />
+          </a>
           <img
             class="starIcon"
-            src="../../assets/starIcon.png"
+            [src]="
+              isStarred(game)
+                ? '../../assets/starredIcon.png'
+                : '../../assets/starIcon.png'
+            "
+            alt="IconLarge"
+            (click)="starGame(game); onEvent($event)"
             alt="basketIcon"
           />
           <img
+            (click)="onGameClicked(game); onEvent($event)"
             class="infoIcon"
             src="../../assets/infoIcon.png"
             alt="basketIcon"
@@ -100,6 +197,32 @@
         </div>
       </div>
     </ng-container>
+  </div>
+  <div class="popUpDesc" *ngIf="showGameDetails == '4'">
+    <h2>{{ clickedGame.name }}</h2>
+    <div class="badgesContainer">
+      <p class="badge">{{ clickedGame.year_published }}</p>
+      <p class="badge">Ages:{{ clickedGame.min_age }}+</p>
+      <p class="badge">
+        Playtime: {{ clickedGame.min_playtime }}-{{
+          clickedGame.max_playtime
+        }}mins
+      </p>
+      <p
+        class="badge"
+        *ngIf="clickedGame.min_players != clickedGame.max_players"
+      >
+        Players:{{ clickedGame.min_players }}-{{ clickedGame.max_players }}
+      </p>
+      <p
+        class="badge"
+        *ngIf="clickedGame.min_players == clickedGame.max_players"
+      >
+        Players:{{ clickedGame.min_players }}
+      </p>
+    </div>
+    <h3 *ngIf="clickedGame.description_preview !== ''">Description</h3>
+    <p>{{ clickedGame.description_preview }}</p>
   </div>
   <h4>5-6 PLAYERS</h4>
   <div class="row__posters" #posters>
@@ -114,19 +237,33 @@
           alt="{{ game.name }}"
           class="row__poster"
         />
-        <div class="overlayContainer">
-          <p class="overlayText">{{ game.name }}</p>
-          <img
-            class="basketIcon"
-            src="../../assets/basketIcon.png"
-            alt="basketIcon"
-          />
+        <div class="overlayContainer" (click)="hidePopUp()">
+          <p class="overlayText" (click)="onGameClicked(game); onEvent($event)">
+            {{ game.name }}
+          </p>
+          <a
+            target="_blank"
+            href="https://www.amazon.com/s?k={{ game.name }}+board+game"
+          >
+            <img
+              class="basketIcon"
+              src="../../assets/basketIcon.png"
+              alt="basketIcon"
+            />
+          </a>
           <img
             class="starIcon"
-            src="../../assets/starIcon.png"
+            [src]="
+              isStarred(game)
+                ? '../../assets/starredIcon.png'
+                : '../../assets/starIcon.png'
+            "
+            alt="IconLarge"
+            (click)="starGame(game); onEvent($event)"
             alt="basketIcon"
           />
           <img
+            (click)="onGameClicked(game); onEvent($event)"
             class="infoIcon"
             src="../../assets/infoIcon.png"
             alt="basketIcon"
@@ -135,9 +272,35 @@
       </div>
     </ng-container>
   </div>
-  <h4>6+ PLAYERS</h4>
+  <div class="popUpDesc" *ngIf="showGameDetails == '6'">
+    <h2>{{ clickedGame.name }}</h2>
+    <div class="badgesContainer">
+      <p class="badge">{{ clickedGame.year_published }}</p>
+      <p class="badge">Ages:{{ clickedGame.min_age }}+</p>
+      <p class="badge">
+        Playtime: {{ clickedGame.min_playtime }}-{{
+          clickedGame.max_playtime
+        }}mins
+      </p>
+      <p
+        class="badge"
+        *ngIf="clickedGame.min_players != clickedGame.max_players"
+      >
+        Players:{{ clickedGame.min_players }}-{{ clickedGame.max_players }}
+      </p>
+      <p
+        class="badge"
+        *ngIf="clickedGame.min_players == clickedGame.max_players"
+      >
+        Players:{{ clickedGame.min_players }}
+      </p>
+    </div>
+    <h3 *ngIf="clickedGame.description_preview !== ''">Description</h3>
+    <p>{{ clickedGame.description_preview }}</p>
+  </div>
+  <h4>7+ PLAYERS</h4>
   <div class="row__posters" #posters>
-    <ng-container *ngFor="let game of board6pGames">
+    <ng-container *ngFor="let game of board7pGames">
       <div class="container">
         <img
           *ngIf="
@@ -148,19 +311,33 @@
           alt="{{ game.name }}"
           class="row__poster"
         />
-        <div class="overlayContainer">
-          <p class="overlayText">{{ game.name }}</p>
-          <img
-            class="basketIcon"
-            src="../../assets/basketIcon.png"
-            alt="basketIcon"
-          />
+        <div class="overlayContainer" (click)="hidePopUp()">
+          <p class="overlayText" (click)="onGameClicked(game); onEvent($event)">
+            {{ game.name }}
+          </p>
+          <a
+            target="_blank"
+            href="https://www.amazon.com/s?k={{ game.name }}+board+game"
+          >
+            <img
+              class="basketIcon"
+              src="../../assets/basketIcon.png"
+              alt="basketIcon"
+            />
+          </a>
           <img
             class="starIcon"
-            src="../../assets/starIcon.png"
+            [src]="
+              isStarred(game)
+                ? '../../assets/starredIcon.png'
+                : '../../assets/starIcon.png'
+            "
+            alt="IconLarge"
+            (click)="starGame(game); onEvent($event)"
             alt="basketIcon"
           />
           <img
+            (click)="onGameClicked(game); onEvent($event)"
             class="infoIcon"
             src="../../assets/infoIcon.png"
             alt="basketIcon"
@@ -168,5 +345,31 @@
         </div>
       </div>
     </ng-container>
+  </div>
+  <div class="popUpDesc" *ngIf="showGameDetails == '7'">
+    <h2>{{ clickedGame.name }}</h2>
+    <div class="badgesContainer">
+      <p class="badge">{{ clickedGame.year_published }}</p>
+      <p class="badge">Ages:{{ clickedGame.min_age }}+</p>
+      <p class="badge">
+        Playtime: {{ clickedGame.min_playtime }}-{{
+          clickedGame.max_playtime
+        }}mins
+      </p>
+      <p
+        class="badge"
+        *ngIf="clickedGame.min_players != clickedGame.max_players"
+      >
+        Players:{{ clickedGame.min_players }}-{{ clickedGame.max_players }}
+      </p>
+      <p
+        class="badge"
+        *ngIf="clickedGame.min_players == clickedGame.max_players"
+      >
+        Players:{{ clickedGame.min_players }}
+      </p>
+    </div>
+    <h3 *ngIf="clickedGame.description_preview !== ''">Description</h3>
+    <p>{{ clickedGame.description_preview }}</p>
   </div>
 </div>
