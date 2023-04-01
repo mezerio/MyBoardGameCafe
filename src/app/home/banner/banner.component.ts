@@ -1,14 +1,13 @@
 import { Component, OnInit } from "@angular/core";
-import { BoardGameService } from "../services/games.service";
+import { BoardGameService } from "../../services/games.service";
 import { Game } from "src/assets/game";
-
+import { GameListComponent } from "../game-list/game-list.component";
 @Component({
   selector: "app-banner",
   templateUrl: "./banner.component.html",
   styleUrls: ["./banner.component.css"],
 })
 export class BannerComponent {
-  boardGames: any[] | undefined;
   showInfo: boolean = false;
   BannerStarredGames: Game[] = [];
   scytheGame: Game | undefined;

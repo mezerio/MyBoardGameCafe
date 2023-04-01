@@ -7,14 +7,11 @@ import { BrowserModule } from "@angular/platform-browser";
 import { HttpClientModule } from "@angular/common/http";
 
 import { AppComponent } from "./app.component";
-import { BannerComponent } from "./banner/banner.component";
-import { GameListComponent } from "./game-list/game-list.component";
-import { NavbarComponent } from './navbar/navbar.component';
-import { FooterComponent } from './footer/footer.component';
+import { AppRoutingModule } from "./app-routing.module";
 
 @NgModule({
-  declarations: [AppComponent, BannerComponent, GameListComponent, NavbarComponent, FooterComponent],
-  imports: [BrowserModule, HttpClientModule],
+  declarations: [AppComponent],
+  imports: [BrowserModule, HttpClientModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })

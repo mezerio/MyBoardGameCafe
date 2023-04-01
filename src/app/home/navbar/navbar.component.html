@@ -6,8 +6,17 @@
     alt="mez Logo"
   />
   <div class="navpages">
-    <p class="navpage" [ngClass]="{ navpage__black: navShow }">Home</p>
-    <p class="navpage" [ngClass]="{ navpage__black: navShow }">My List</p>
+    <p class="navpage" [ngClass]="{ navpage__black: navShow }" routerLink="">
+      Home
+    </p>
+
+    <p
+      class="navpage"
+      [ngClass]="{ navpage__black: navShow }"
+      routerLink="my-list"
+    >
+      My List
+    </p>
   </div>
   <img
     class="nav__avatar"
