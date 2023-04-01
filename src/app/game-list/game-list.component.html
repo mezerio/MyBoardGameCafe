@@ -1,72 +1,172 @@
 <div class="row">
-  <h4>Most Popular</h4>
+  <h4>MOST POPULAR</h4>
   <div class="row__posters" #posters>
     <ng-container *ngFor="let game of boardGames">
-      <img
-        *ngIf="
-          game.image_url !==
-          'https://s3-us-west-1.amazonaws.com/5cc.images/games/empty+box.jpg'
-        "
-        src="{{ game.image_url }}"
-        alt="Image description"
-        class="row__posterLarge"
-      />
+      <div class="containerLarge">
+        <img
+          *ngIf="
+            game.image_url !==
+            'https://s3-us-west-1.amazonaws.com/5cc.images/games/empty+box.jpg'
+          "
+          src="{{ game.image_url }}"
+          alt="Image description"
+          class="row__posterLarge"
+        />
+        <div class="overlayContainerLarge">
+          <p class="overlayTextLarge">{{ game.name }}</p>
+          <img
+            class="basketIconLarge"
+            src="../../assets/basketIcon.png"
+            alt="IconLarge"
+          />
+          <img
+            class="starIconLarge"
+            src="../../assets/starIcon.png"
+            alt="IconLarge"
+          />
+          <img
+            class="infoIconLarge"
+            src="../../assets/infoIcon.png"
+            alt="IconLarge"
+          />
+        </div>
+      </div>
     </ng-container>
   </div>
-  <h4>2 Players</h4>
+  <h4>2 PLAYERS</h4>
   <div class="row__posters" #posters>
     <ng-container *ngFor="let game of board2Games">
-      <img
-        *ngIf="
-          game.image_url !==
-          'https://s3-us-west-1.amazonaws.com/5cc.images/games/empty+box.jpg'
-        "
-        src="{{ game.image_url }}"
-        alt="{{ game.name }}"
-        class="row__poster"
-      />
+      <div class="container">
+        <img
+          *ngIf="
+            game.image_url !==
+            'https://s3-us-west-1.amazonaws.com/5cc.images/games/empty+box.jpg'
+          "
+          src="{{ game.image_url }}"
+          alt="{{ game.name }}"
+          class="row__poster"
+        />
+        <div class="overlayContainer">
+          <p class="overlayText">{{ game.name }}</p>
+          <img
+            class="basketIcon"
+            src="../../assets/basketIcon.png"
+            alt="basketIcon"
+          />
+          <img
+            class="starIcon"
+            src="../../assets/starIcon.png"
+            alt="basketIcon"
+          />
+          <img
+            class="infoIcon"
+            src="../../assets/infoIcon.png"
+            alt="basketIcon"
+          />
+        </div>
+      </div>
     </ng-container>
   </div>
-  <h4>3-4 Players</h4>
+  <h4>3-4 PLAYERS</h4>
   <div class="row__posters" #posters>
     <ng-container *ngFor="let game of board34Games">
-      <img
-        *ngIf="
-          game.image_url !==
-          'https://s3-us-west-1.amazonaws.com/5cc.images/games/empty+box.jpg'
-        "
-        src="{{ game.image_url }}"
-        alt="{{ game.name }}"
-        class="row__poster"
-      />
+      <div class="container">
+        <img
+          *ngIf="
+            game.image_url !==
+            'https://s3-us-west-1.amazonaws.com/5cc.images/games/empty+box.jpg'
+          "
+          src="{{ game.image_url }}"
+          alt="{{ game.name }}"
+          class="row__poster"
+        />
+        <div class="overlayContainer">
+          <p class="overlayText">{{ game.name }}</p>
+          <img
+            class="basketIcon"
+            src="../../assets/basketIcon.png"
+            alt="basketIcon"
+          />
+          <img
+            class="starIcon"
+            src="../../assets/starIcon.png"
+            alt="basketIcon"
+          />
+          <img
+            class="infoIcon"
+            src="../../assets/infoIcon.png"
+            alt="basketIcon"
+          />
+        </div>
+      </div>
     </ng-container>
   </div>
-  <h4>5-6 Players</h4>
+  <h4>5-6 PLAYERS</h4>
   <div class="row__posters" #posters>
     <ng-container *ngFor="let game of board56Games">
-      <img
-        *ngIf="
-          game.image_url !==
-          'https://s3-us-west-1.amazonaws.com/5cc.images/games/empty+box.jpg'
-        "
-        src="{{ game.image_url }}"
-        alt="{{ game.name }}"
-        class="row__poster"
-      />
+      <div class="container">
+        <img
+          *ngIf="
+            game.image_url !==
+            'https://s3-us-west-1.amazonaws.com/5cc.images/games/empty+box.jpg'
+          "
+          src="{{ game.image_url }}"
+          alt="{{ game.name }}"
+          class="row__poster"
+        />
+        <div class="overlayContainer">
+          <p class="overlayText">{{ game.name }}</p>
+          <img
+            class="basketIcon"
+            src="../../assets/basketIcon.png"
+            alt="basketIcon"
+          />
+          <img
+            class="starIcon"
+            src="../../assets/starIcon.png"
+            alt="basketIcon"
+          />
+          <img
+            class="infoIcon"
+            src="../../assets/infoIcon.png"
+            alt="basketIcon"
+          />
+        </div>
+      </div>
     </ng-container>
   </div>
-  <h4>6+ Players</h4>
+  <h4>6+ PLAYERS</h4>
   <div class="row__posters" #posters>
     <ng-container *ngFor="let game of board6pGames">
-      <img
-        *ngIf="
-          game.image_url !==
-          'https://s3-us-west-1.amazonaws.com/5cc.images/games/empty+box.jpg'
-        "
-        src="{{ game.image_url }}"
-        alt="{{ game.name }}"
-        class="row__poster"
-      />
+      <div class="container">
+        <img
+          *ngIf="
+            game.image_url !==
+            'https://s3-us-west-1.amazonaws.com/5cc.images/games/empty+box.jpg'
+          "
+          src="{{ game.image_url }}"
+          alt="{{ game.name }}"
+          class="row__poster"
+        />
+        <div class="overlayContainer">
+          <p class="overlayText">{{ game.name }}</p>
+          <img
+            class="basketIcon"
+            src="../../assets/basketIcon.png"
+            alt="basketIcon"
+          />
+          <img
+            class="starIcon"
+            src="../../assets/starIcon.png"
+            alt="basketIcon"
+          />
+          <img
+            class="infoIcon"
+            src="../../assets/infoIcon.png"
+            alt="basketIcon"
+          />
+        </div>
+      </div>
     </ng-container>
   </div>
 </div>

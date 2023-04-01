@@ -10,31 +10,123 @@
   transition: all 1s linear;
 }
 
-.row__posters {
-  cursor: pointer;
-}
-
 .row__posters::-webkit-scrollbar {
   display: none;
 }
 
 .row__poster {
   object-fit: contain;
-  width: 100%;
-  max-height: 150px;
-  transition: transform 450ms;
-  margin-right: 10px;
-}
-
-.row__poster:hover {
-  transform: scale(1.08);
+  height: 100%;
+  width: 160px;
 }
 
 .row__posterLarge {
-  max-height: 200px;
+  height: 100%;
   transition: transform 450ms;
 }
 
-.row__posterLarge:hover {
+.containerLarge:hover,
+.container:hover {
   transform: scale(1.09);
+}
+
+.containerLarge {
+  position: relative;
+  max-height: 200px;
+  max-width: 270px;
+  text-align: center;
+  transition: transform 450ms;
+  margin: 10px;
+}
+.container {
+  position: relative;
+  max-height: 150px;
+  max-width: 160px;
+  text-align: center;
+  transition: transform 450ms;
+  margin: 10px;
+}
+
+.basketIconLarge,
+.starIconLarge,
+.infoIconLarge,
+.basketIcon,
+.starIcon,
+.infoIcon {
+  opacity: 100%;
+  position: absolute;
+  bottom: 0%;
+  z-index: 2;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.basketIconLarge {
+  left: 0;
+  transform: translate(20px, -15px);
+}
+.starIconLarge {
+  left: 0;
+  transform: translate(60px, -15px);
+}
+.infoIconLarge {
+  right: 0;
+  transform: translate(-20px, -15px);
+}
+
+.basketIcon {
+  left: 0;
+  transform: translate(10px, -15px);
+}
+.starIcon {
+  left: 0;
+  transform: translate(45px, -15px);
+}
+.infoIcon {
+  right: 0;
+  transform: translate(-10px, -15px);
+}
+
+.overlayContainerLarge,
+.overlayContainer {
+  opacity: 0%;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.48);
+  transition: 0.5s;
+  border-radius: 5px;
+}
+
+.overlayContainerLarge:hover,
+.overlayContainer:hover {
+  opacity: 100%;
+}
+
+.overlayTextLarge,
+.overlayText {
+  color: white;
+  font-size: 24px;
+  position: absolute;
+  left: 20px;
+  bottom: 25px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.overlayText {
+  font-size: 16px;
+  bottom: 36px;
+  left: 10px;
+}
+
+h4 {
+  border-bottom-color: red;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  width: 20%;
 }
