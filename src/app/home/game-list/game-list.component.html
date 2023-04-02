@@ -51,7 +51,7 @@
       </div>
     </ng-container>
   </div>
-  <div class="popUpDesc" *ngIf="showGameDetails == '0'">
+  <div class="popUpDesc" [ngClass]="{ show: showGameDetails == '0' }">
     <h2>{{ clickedGame.name }}</h2>
     <div class="badgesContainer">
       <p class="badge">{{ clickedGame.year_published }}</p>
@@ -128,7 +128,7 @@
       </div>
     </ng-container>
   </div>
-  <div class="popUpDesc" *ngIf="showGameDetails == '2'">
+  <div class="popUpDesc" [ngClass]="{ show: showGameDetails == '2' }">
     <h2>{{ clickedGame.name }}</h2>
     <div class="badgesContainer">
       <p class="badge">{{ clickedGame.year_published }}</p>
@@ -204,7 +204,7 @@
       </div>
     </ng-container>
   </div>
-  <div class="popUpDesc" *ngIf="showGameDetails == '4'">
+  <div class="popUpDesc" [ngClass]="{ show: showGameDetails == '4' }">
     <h2>{{ clickedGame.name }}</h2>
     <div class="badgesContainer">
       <p class="badge">{{ clickedGame.year_published }}</p>
@@ -280,7 +280,7 @@
       </div>
     </ng-container>
   </div>
-  <div class="popUpDesc" *ngIf="showGameDetails == '6'">
+  <div class="popUpDesc" [ngClass]="{ show: showGameDetails == '6' }">
     <h2>{{ clickedGame.name }}</h2>
     <div class="badgesContainer">
       <p class="badge">{{ clickedGame.year_published }}</p>
@@ -356,7 +356,7 @@
       </div>
     </ng-container>
   </div>
-  <div class="popUpDesc" *ngIf="showGameDetails == '7'">
+  <div class="popUpDesc" [ngClass]="{ show: showGameDetails == '7' }">
     <h2>{{ clickedGame.name }}</h2>
     <div class="badgesContainer">
       <p class="badge">{{ clickedGame.year_published }}</p>
