@@ -2,12 +2,14 @@
   <h4>MOST POPULAR</h4>
   <div class="row__posters" #posters>
     <ng-container *ngFor="let game of boardGames">
-      <div class="containerLarge">
+      <div
+        class="containerLarge"
+        *ngIf="
+          game.image_url !==
+          'https://s3-us-west-1.amazonaws.com/5cc.images/games/empty+box.jpg'
+        "
+      >
         <img
-          *ngIf="
-            game.image_url !==
-            'https://s3-us-west-1.amazonaws.com/5cc.images/games/empty+box.jpg'
-          "
           src="{{ game.image_url }}"
           alt="Image description"
           class="row__posterLarge"
@@ -33,8 +35,8 @@
             class="starIconLarge"
             [src]="
               isStarred(game)
-                ? '../../assets/starredIcon.png'
-                : '../../assets/starIcon.png'
+                ? '../../assets/likedIcon.png'
+                : '../../assets/likeIcon.png'
             "
             alt="IconLarge"
             (click)="starGame(game); onEvent($event)"
@@ -78,12 +80,14 @@
   <h4>2 PLAYERS</h4>
   <div class="row__posters" #posters>
     <ng-container *ngFor="let game of board2Games">
-      <div class="container">
+      <div
+        class="container"
+        *ngIf="
+          game.image_url !==
+          'https://s3-us-west-1.amazonaws.com/5cc.images/games/empty+box.jpg'
+        "
+      >
         <img
-          *ngIf="
-            game.image_url !==
-            'https://s3-us-west-1.amazonaws.com/5cc.images/games/empty+box.jpg'
-          "
           src="{{ game.image_url }}"
           alt="{{ game.name }}"
           class="row__poster"
@@ -107,8 +111,8 @@
             class="starIcon"
             [src]="
               isStarred(game)
-                ? '../../assets/starredIcon.png'
-                : '../../assets/starIcon.png'
+                ? '../../assets/likedIcon.png'
+                : '../../assets/likeIcon.png'
             "
             alt="IconLarge"
             (click)="starGame(game); onEvent($event)"
@@ -153,12 +157,14 @@
   <h4>3-4 PLAYERS</h4>
   <div class="row__posters" #posters>
     <ng-container *ngFor="let game of board34Games">
-      <div class="container">
+      <div
+        class="container"
+        *ngIf="
+          game.image_url !==
+          'https://s3-us-west-1.amazonaws.com/5cc.images/games/empty+box.jpg'
+        "
+      >
         <img
-          *ngIf="
-            game.image_url !==
-            'https://s3-us-west-1.amazonaws.com/5cc.images/games/empty+box.jpg'
-          "
           src="{{ game.image_url }}"
           alt="{{ game.name }}"
           class="row__poster"
@@ -181,8 +187,8 @@
             class="starIcon"
             [src]="
               isStarred(game)
-                ? '../../assets/starredIcon.png'
-                : '../../assets/starIcon.png'
+                ? '../../assets/likedIcon.png'
+                : '../../assets/likeIcon.png'
             "
             alt="IconLarge"
             (click)="starGame(game); onEvent($event)"
@@ -227,12 +233,14 @@
   <h4>5-6 PLAYERS</h4>
   <div class="row__posters" #posters>
     <ng-container *ngFor="let game of board56Games">
-      <div class="container">
+      <div
+        class="container"
+        *ngIf="
+          game.image_url !==
+          'https://s3-us-west-1.amazonaws.com/5cc.images/games/empty+box.jpg'
+        "
+      >
         <img
-          *ngIf="
-            game.image_url !==
-            'https://s3-us-west-1.amazonaws.com/5cc.images/games/empty+box.jpg'
-          "
           src="{{ game.image_url }}"
           alt="{{ game.name }}"
           class="row__poster"
@@ -255,8 +263,8 @@
             class="starIcon"
             [src]="
               isStarred(game)
-                ? '../../assets/starredIcon.png'
-                : '../../assets/starIcon.png'
+                ? '../../assets/likedIcon.png'
+                : '../../assets/likeIcon.png'
             "
             alt="IconLarge"
             (click)="starGame(game); onEvent($event)"
@@ -301,12 +309,14 @@
   <h4>7+ PLAYERS</h4>
   <div class="row__posters" #posters>
     <ng-container *ngFor="let game of board7pGames">
-      <div class="container">
+      <div
+        class="container"
+        *ngIf="
+          game.image_url !==
+          'https://s3-us-west-1.amazonaws.com/5cc.images/games/empty+box.jpg'
+        "
+      >
         <img
-          *ngIf="
-            game.image_url !==
-            'https://s3-us-west-1.amazonaws.com/5cc.images/games/empty+box.jpg'
-          "
           src="{{ game.image_url }}"
           alt="{{ game.name }}"
           class="row__poster"
@@ -329,8 +339,8 @@
             class="starIcon"
             [src]="
               isStarred(game)
-                ? '../../assets/starredIcon.png'
-                : '../../assets/starIcon.png'
+                ? '../../assets/likedIcon.png'
+                : '../../assets/likeIcon.png'
             "
             alt="IconLarge"
             (click)="starGame(game); onEvent($event)"

@@ -1,12 +1,4 @@
-<header
-  class="banner"
-  style="
-    background-size: cover;
-    background-position: center center;
-    /* background-image: url('../assets/bannerBg.jpeg'); */
-    background-image: url('https://assets.dicebreaker.com/scythe-board-game-box-artwork.jpg/BROK/resize/1200x1200%3E/format/jpg/quality/70/scythe-board-game-box-artwork.jpg');
-  "
->
+<header class="banner">
   <div class="banner__contents">
     <h1 class="banner__title">Scythe</h1>
 
@@ -32,8 +24,8 @@
         class="starIcon"
         [src]="
           isStarred()
-            ? '../../assets/starredIcon.png'
-            : '../../assets/starIcon.png'
+            ? '../../assets/likedIcon.png'
+            : '../../assets/likeIcon.png'
         "
         (click)="starGame()"
       />
@@ -75,5 +67,4 @@
       lands. Each encounter card provides the player with...
     </h1>
   </div>
-  <div class="banner--fadeBottom"></div>
 </header>

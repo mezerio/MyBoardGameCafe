@@ -7,10 +7,14 @@
 
 .footerText {
   text-align: center;
+  color: white;
 }
 
 .githubIcon {
   text-align: center;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: white;
 }
 .githubIcon:hover {
   cursor: pointer;

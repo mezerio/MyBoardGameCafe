@@ -37,6 +37,9 @@
   text-align: center;
   transition: transform 450ms;
   margin: 10px;
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
 }
 .container {
   position: relative;
@@ -45,6 +48,9 @@
   text-align: center;
   transition: transform 450ms;
   margin: 10px;
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
 }
 
 .basketIconLarge,
@@ -129,6 +135,7 @@ h4 {
   border-bottom-width: 2px;
   border-bottom-style: solid;
   width: 20%;
+  color: white;
 }
 
 h2 {
@@ -136,10 +143,10 @@ h2 {
 }
 
 .popUpDesc {
-  background-color: rgba(255, 0, 0, 0.637);
+  background-color: rgba(255, 0, 0, 0.8);
   padding: 10px;
   border-radius: 5px;
-  color: black;
+  color: white;
   margin-right: 50px;
 }
 .badgesContainer {

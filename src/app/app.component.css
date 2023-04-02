@@ -1,3 +1,4 @@
-.app {
-  background-color: white;
+.app,
+body {
+  background-color: black;
 }

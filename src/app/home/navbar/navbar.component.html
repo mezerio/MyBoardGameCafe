@@ -2,21 +2,42 @@
   <img
     routerLink=""
     class="nav__logo"
-    src="../assets/mezLogo.png"
+    src="../assets/mbgcLogo.png"
     alt="mez Logo"
   />
+
   <div class="navpages">
-    <p class="navpage" [ngClass]="{ navpage__black: navShow }" routerLink="">
+    <!-- <p
+      class="navpage"
+      routerLink=""
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
       Home
     </p>
 
     <p
       class="navpage"
-      [ngClass]="{ navpage__black: navShow }"
       routerLink="my-list"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
     >
       My List
-    </p>
+    </p> -->
+    <div
+      routerLinkActive="active"
+      class="navpage"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <p routerLink="/">Home</p>
+    </div>
+    <div
+      routerLinkActive="active"
+      class="navpage"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <p routerLink="/my-list">My List</p>
+    </div>
   </div>
   <img
     class="nav__avatar"

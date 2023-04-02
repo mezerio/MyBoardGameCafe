@@ -12,7 +12,7 @@
 }
 
 .nav__black {
-  background-color: white;
+  background-color: black;
 }
 
 .nav__logo {
@@ -22,6 +22,7 @@
   object-fit: contain;
   cursor: pointer;
   border-radius: 10px;
+  width: 25s0px;
 }
 
 .nav__avatar {
@@ -36,7 +37,7 @@
   display: flex;
   color: white;
   position: fixed;
-  left: 240px;
+  left: 330px;
   height: 40px;
   width: 200px;
   align-items: center;
@@ -45,6 +46,9 @@
 
 .navpage {
   margin: 10px;
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  border-bottom-color: transparent;
 }
 
 .navpage__black {
@@ -54,4 +58,11 @@
 .navpage:hover {
   color: red;
   cursor: pointer;
+}
+
+.active {
+  border-bottom-color: red;
+}
+p {
+  margin: 0;
 }
