@@ -28,7 +28,7 @@ export class BannerComponent {
   }
 
   ngOnInit() {
-    this.boardGameService.getBoardGames().subscribe((response) => {
+    this.boardGameService.getBoardGames(0).subscribe((response) => {
       this.scytheGame = response.games[1];
     });
   }

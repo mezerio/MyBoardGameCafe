@@ -1,0 +1,91 @@
+<div class="row__posters" #posters>
+  <ng-container *ngFor="let game of gameList">
+    <div
+      class="container"
+      [ngClass]="{ containerLarge: largePosters }"
+      *ngIf="
+        game.image_url !==
+        'https://s3-us-west-1.amazonaws.com/5cc.images/games/empty+box.jpg'
+      "
+    >
+      <img
+        src="{{ game.image_url }}"
+        alt="{{ game.name }}"
+        class="row__posterLarge"
+        [ngClass]="{ row__poster: !largePosters }"
+      />
+      <div
+        class="overlayContainer"
+        [ngClass]="{ overlayContainerLarge: largePosters }"
+        (click)="hidePopUp()"
+      >
+        <p
+          class="overlayText"
+          [ngClass]="{ overlayTextLarge: largePosters }"
+          (click)="
+            largePosters
+              ? onLargeGameClicked(game, $event)
+              : onGameClicked(game, $event)
+          "
+        >
+          {{ game.name }}
+        </p>
+        <a
+          target="_blank"
+          href="https://www.amazon.com/s?k={{ game.name }}+board+game"
+        >
+          <img
+            class="basketIcon"
+            [ngClass]="{ basketIconLarge: largePosters }"
+            src="../../assets/basketIcon.png"
+            alt="basketIcon"
+          />
+        </a>
+
+        <img
+          class="starIcon"
+          [ngClass]="{ starIconLarge: largePosters }"
+          [src]="
+            isStarred(game)
+              ? '../../assets/likedIcon.png'
+              : '../../assets/likeIcon.png'
+          "
+          alt="IconLarge"
+          (click)="starGame(game); onEvent($event)"
+          alt="basketIcon"
+        />
+        <img
+          (click)="
+            largePosters
+              ? onLargeGameClicked(game, $event)
+              : onGameClicked(game, $event)
+          "
+          class="infoIcon"
+          [ngClass]="{ infoIconLarge: largePosters }"
+          src="../../assets/infoIcon.png"
+          alt="basketIcon"
+        />
+      </div>
+    </div>
+  </ng-container>
+</div>
+<div class="popUpDesc" [ngClass]="{ show: showGameDetails == playerNumber }">
+  <h2>{{ clickedGame.name }}</h2>
+  <div class="badgesContainer">
+    <p class="badge">{{ clickedGame.year_published }}</p>
+    <p class="badge">Ages:{{ clickedGame.min_age }}+</p>
+    <p class="badge">
+      Playtime: {{ clickedGame.min_playtime }}-{{
+        clickedGame.max_playtime
+      }}mins
+    </p>
+    <p class="badge" *ngIf="clickedGame.min_players != clickedGame.max_players">
+      Players:{{ clickedGame.min_players }}-{{ clickedGame.max_players }}
+    </p>
+    <p class="badge" *ngIf="clickedGame.min_players == clickedGame.max_players">
+      Players:{{ clickedGame.min_players }}
+    </p>
+  </div>
+  <h3 *ngIf="clickedGame.description_preview !== ''">Description</h3>
+  <p>{{ clickedGame.description_preview }}</p>
+</div>

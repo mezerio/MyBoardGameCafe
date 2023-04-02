@@ -8,11 +8,11 @@ import { Game } from "src/assets/game";
   styleUrls: ["./game-list.component.css"],
 })
 export class GameListComponent implements OnInit {
-  boardGames: any[] | undefined;
-  board2Games: any[] | undefined;
-  board34Games: any[] | undefined;
-  board56Games: any[] | undefined;
-  board7pGames: any[] | undefined;
+  boardGames: any[] = [];
+  board2Games: any[] = [];
+  board34Games: any[] = [];
+  board56Games: any[] = [];
+  board7pGames: any[] = [];
   showGameDetails: string | undefined;
   clickedGame: Game = {
     description_preview: "",
@@ -32,72 +32,20 @@ export class GameListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.boardGameService.getBoardGames().subscribe((response) => {
+    this.boardGameService.getBoardGames(0).subscribe((response) => {
       this.boardGames = response.games;
     });
-    this.boardGameService.get2BoardGames().subscribe((response) => {
+    this.boardGameService.getBoardGames(2).subscribe((response) => {
       this.board2Games = response.games;
     });
-    this.boardGameService.get34BoardGames().subscribe((response) => {
+    this.boardGameService.getBoardGames(4).subscribe((response) => {
       this.board34Games = response.games;
     });
-    this.boardGameService.get56BoardGames().subscribe((response) => {
+    this.boardGameService.getBoardGames(6).subscribe((response) => {
       this.board56Games = response.games;
     });
-    this.boardGameService.get7pBoardGames().subscribe((response) => {
+    this.boardGameService.getBoardGames(7).subscribe((response) => {
       this.board7pGames = response.games;
     });
-  }
-
-  onGameClicked(game: Game) {
-    this.clickedGame = game;
-    if (this.clickedGame.min_players == "7") {
-      this.showGameDetails = this.clickedGame.min_players;
-    } else {
-      this.showGameDetails = this.clickedGame.max_players;
-    }
-    console.log(this.clickedGame);
-  }
-  onLargeGameClicked(game: Game) {
-    this.clickedGame = game;
-    this.showGameDetails = "0";
-    console.log(this.clickedGame);
-  }
-  hidePopUp() {
-    this.showGameDetails = "8";
-  }
-  onEvent(event: { stopPropagation: () => void }) {
-    event.stopPropagation();
-  }
-  // starGame(game: Game) {
-  //   console.log("star game");
-  //   console.log(this.starredGames?.includes(game));
-
-  //   if (this.starredGames?.includes(game)) {
-  //     const index = this.starredGames.indexOf(game);
-  //     this.starredGames.splice(index, 1);
-  //   } else {
-  //     this.starredGames?.push(game);
-  //   }
-  //   console.log(this.starredGames);
-  // }
-  // isStarred(game: Game) {
-  //   return this.starredGames?.includes(game);
-  // }
-
-  starGame(game: Game) {
-    console.log("star game");
-    console.log(this.starredGames.some((item) => item.name == game.name));
-    console.log(this.starredGames, "bef");
-
-    if (this.starredGames?.some((item) => item.name == game.name)) {
-      this.boardGameService.removeStarredGames(game);
-    } else {
-      this.boardGameService.addStarredGames(game);
-    }
-    console.log(this.starredGames, "after");
-  }
-  isStarred(game: Game) {
-    return this.starredGames.some((item) => item.name == game.name);
   }
 }

@@ -7,6 +7,7 @@ import { NavbarComponent } from "./navbar/navbar.component";
 import { BannerComponent } from "./banner/banner.component";
 import { GameListComponent } from "./game-list/game-list.component";
 import { FooterComponent } from "./footer/footer.component";
+import { GameCardComponent } from "./game-list/game-card/game-card.component";
 
 @NgModule({
   declarations: [
@@ -15,8 +16,9 @@ import { FooterComponent } from "./footer/footer.component";
     BannerComponent,
     GameListComponent,
     FooterComponent,
+    GameCardComponent,
   ],
   imports: [CommonModule, HomeRoutingModule],
-  exports: [NavbarComponent, FooterComponent],
+  exports: [NavbarComponent, FooterComponent, GameCardComponent],
 })
 export class HomeModule {}
