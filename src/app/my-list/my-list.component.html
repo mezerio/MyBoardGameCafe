@@ -1,4 +1,49 @@
 <app-navbar/>
+<div
+    class="banner"
+    style="
+      background-size: cover;
+      background-position: center center;
+      background-image: linear-gradient(to top, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0) 100%), url('https://assets.dicebreaker.com/scythe-board-game-box-artwork.jpg/BROK/resize/1200x1200%3E/format/jpg/quality/70/scythe-board-game-box-artwork.jpg');
+      /* background-image: url('https://assets.dicebreaker.com/scythe-board-game-box-artwork.jpg/BROK/resize/1200x1200%3E/format/jpg/quality/70/scythe-board-game-box-artwork.jpg'); */
+    ">
+</div>
 <h1 class="title">My List</h1>
-<div class="starredList">smep</div>
+<div *ngIf="starredGames.length !== 0" class="row__posters" #posters>
+    <ng-container *ngFor="let game of starredGames">
+      <div class="container">
+        <img
+          src="{{ game.image_url }}"
+          alt="{{ game.name }}"
+          class="row__poster"
+        />
+        <div class="overlayContainer">
+          <p class="overlayText" >
+            {{ game.name }}
+          </p>
+          <a
+            target="_blank"
+            href="https://www.amazon.com/s?k={{ game.name }}+board+game"
+          >
+            <img
+              class="basketIcon"
+              src="../../assets/basketIcon.png"
+              alt="basketIcon"
+            />
+          </a>
+
+          <img
+          (click)="removeStar(game)"
+            class="starIcon"
+            src="../../assets/starredIcon.png"
+            alt="IconLarge"
+            alt="basketIcon"
+          />
+        </div>
+      </div>
+    </ng-container>
+  </div>
+
+  <p class="noGames" *ngIf="starredGames.length == 0">You have no games added to your list</p>
+
 <app-footer/>

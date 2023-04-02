@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { BoardGameService } from "../../services/games.service";
 import { Game } from "src/assets/game";
-import { GameListComponent } from "../game-list/game-list.component";
+
 @Component({
   selector: "app-banner",
   templateUrl: "./banner.component.html",
@@ -9,11 +9,23 @@ import { GameListComponent } from "../game-list/game-list.component";
 })
 export class BannerComponent {
   showInfo: boolean = false;
-  BannerStarredGames: Game[] = [];
-  scytheGame: Game | undefined;
-  isStarred: boolean = false;
+  BannerstarredGames: Game[] = [];
+  scytheGame: Game = {
+    description_preview: "",
+    year_published: "",
+    min_players: "",
+    max_players: "",
+    min_playtime: "",
+    max_playtime: "",
+    min_age: "",
+    name: "",
+    image_url: "",
+  };
+  starredGames: Game[] = [];
 
-  constructor(private boardGameService: BoardGameService) {}
+  constructor(private boardGameService: BoardGameService) {
+    this.starredGames = boardGameService.getStarredGames();
+  }
 
   ngOnInit() {
     this.boardGameService.getBoardGames().subscribe((response) => {
@@ -26,6 +38,14 @@ export class BannerComponent {
   }
 
   starGame() {
-    this.isStarred = !this.isStarred;
+    if (this.starredGames.some((item) => item.name == this.scytheGame.name)) {
+      this.boardGameService.removeStarredGames(this.scytheGame);
+    } else {
+      this.boardGameService.addStarredGames(this.scytheGame);
+    }
+  }
+
+  isStarred() {
+    return this.starredGames.some((item) => item.name == this.scytheGame.name);
   }
 }

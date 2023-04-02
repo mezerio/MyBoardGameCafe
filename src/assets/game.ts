@@ -7,4 +7,5 @@ export interface Game {
   max_playtime: string;
   min_age: string;
   name: string;
+  image_url: string;
 }

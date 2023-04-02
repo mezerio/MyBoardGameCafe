@@ -23,10 +23,13 @@ export class GameListComponent implements OnInit {
     max_playtime: "",
     min_age: "",
     name: "",
+    image_url: "",
   };
-  StarredGames: Game[] = [];
+  starredGames: Game[] = [];
 
-  constructor(private boardGameService: BoardGameService) {}
+  constructor(private boardGameService: BoardGameService) {
+    this.starredGames = boardGameService.getStarredGames();
+  }
 
   ngOnInit() {
     this.boardGameService.getBoardGames().subscribe((response) => {
@@ -66,19 +69,35 @@ export class GameListComponent implements OnInit {
   onEvent(event: { stopPropagation: () => void }) {
     event.stopPropagation();
   }
+  // starGame(game: Game) {
+  //   console.log("star game");
+  //   console.log(this.starredGames?.includes(game));
+
+  //   if (this.starredGames?.includes(game)) {
+  //     const index = this.starredGames.indexOf(game);
+  //     this.starredGames.splice(index, 1);
+  //   } else {
+  //     this.starredGames?.push(game);
+  //   }
+  //   console.log(this.starredGames);
+  // }
+  // isStarred(game: Game) {
+  //   return this.starredGames?.includes(game);
+  // }
+
   starGame(game: Game) {
     console.log("star game");
-    console.log(this.StarredGames?.includes(game));
+    console.log(this.starredGames.some((item) => item.name == game.name));
+    console.log(this.starredGames, "bef");
 
-    if (this.StarredGames?.includes(game)) {
-      const index = this.StarredGames.indexOf(game);
-      this.StarredGames.splice(index, 1);
+    if (this.starredGames?.some((item) => item.name == game.name)) {
+      this.boardGameService.removeStarredGames(game);
     } else {
-      this.StarredGames?.push(game);
+      this.boardGameService.addStarredGames(game);
     }
-    console.log(this.StarredGames);
+    console.log(this.starredGames, "after");
   }
   isStarred(game: Game) {
-    return this.StarredGames?.includes(game);
+    return this.starredGames.some((item) => item.name == game.name);
   }
 }
