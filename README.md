@@ -1,27 +1,42 @@
-# MyBoardGameCafe
+<p align="center">
+  <img src="./src/assets/mBadge.png" alt="Alt Text" width="200" height="200">
+</p>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
+
+# My Board Game Cafe
+
+
+Welcome to My Board Game Cafe! Here, you will find a vast collection of board games from all over the world. Whether you're a seasoned gamer or just starting out, we have something for everyone.
+
+[`Click Here for the website`](https://my-board-game-cafe.web.app/)
+
+## How It Works
+
+With My Board Game Cafe, you have access to an extensive collection of board games that you can browse. Our collection includes a wide range of board games, from classic favorites like Monopoly and Risk to modern hits like Settlers of Catan and Ticket to Ride. We also have lesser-known games from around the world that you may not have heard of before. You can browse by the Top Picks or by number of players you would like to play with. Links to where you can purchase the games are also provided.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Clone the repository
+- Install the relevant dependencies
+- Run:
+<pre><code>$ ng serve </code></pre>
+- Navigate to `http://localhost:4200/`.
 
-## Code scaffolding
+<img src="./src/assets/sr1.gif" alt="Alt Text" width="200" height="200">
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+>  The application will automatically reload if you change any of the source files.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Credits
 
-## Running end-to-end tests
+This website was developed by Maaz Vali using Typescript, Angular amd the Board Game Atlas API.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+[![GitHub Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/mezerio)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+
+
